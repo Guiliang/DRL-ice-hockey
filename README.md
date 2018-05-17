@@ -22,6 +22,8 @@ We are using the on-policy prediction method [Sarsa](https://en.wikipedia.org/wi
 It's a Temporal Difference learning method, and estimate the player performance by Q(s,a), where state s is a series of game contexts and action a is the motion of player.
 
 ***Running:***  
+Use ```python td_three_prediction_lstm.py``` to run the neural network.  
+Use ```python player_ranking_match_by_match_td_lstm.py``` to compute the player ranking metric.  
 The origin works uses a private play-by-play dataset from [Sportlogiq](http://sportlogiq.com/en/), which has not been published.
 
 If you want to run the network, please prepare your won sequential dataset, please organize the data according to network input in the format of Numpy.   

@@ -13,11 +13,11 @@ for Context-Aware Player Evaluation](inprogress).
 | Fully Connected Layer 3| 3      |  N/A |
 
 ***Image of network structure***:  
-<img src=./images/DP-lstm-model-structure.png alt="drawing" style="width: 100px;"/>
+<img src=./images/DP-lstm-model-structure.png alt="drawing" style="width:100px;"/>
 
 <!---![model-structure](./images/DP-lstm-model-structure.png =250x250)--->
 
-***Training method ***  
+***Training method***  
 We are using the on-policy prediction method [Sarsa](https://en.wikipedia.org/wiki/State%E2%80%93action%E2%80%93reward%E2%80%93state%E2%80%93action) (State–Action–Reward–State–Action).
 It's a Temporal Difference learning method, and estimate the player performance by Q(s,a), where state s is a series of game contexts and action a is the motion of player.
 

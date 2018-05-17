@@ -3,7 +3,7 @@
 The repository contains the codes about the network structure of [Deep Reinforcement Learning in Ice Hockey
 for Context-Aware Player Evaluation](inprogress).  
 
-Network Structure:
+***Network Structure***:  
 
 | name        | nodes           | activation function  |
 | ------------- |:-------------:| -----:|
@@ -12,15 +12,22 @@ Network Structure:
 | Fully Connected Layer 2| 1000      |  Relu |
 | Fully Connected Layer 3| 3      |  N/A |
 
-The image structure is:
-<img src=./images/DP-lstm-model-structure.png alt="drawing" style="width: 200px;"/>
+***Image of network structure***:  
+<img src=./images/DP-lstm-model-structure.png alt="drawing" style="width: 100px;"/>
 
 <!---![model-structure](./images/DP-lstm-model-structure.png =250x250)--->
 
-./images/DP-lstm-model-structure.png
-If you want to run it, please organize the data according to network input in array format of Numpy.  
-we are still updating it.  
+***Training method ***  
+We are using the on-policy prediction method [Sarsa](https://en.wikipedia.org/wiki/State%E2%80%93action%E2%80%93reward%E2%80%93state%E2%80%93action) (State–Action–Reward–State–Action).
+It's a Temporal Difference learning method, and estimate the player performance by Q(s,a), where state s is a series of game contexts and action a is the motion of player.
 
-Package required:
+***Running:***  
+The origin works uses a private play-by-play dataset from [Sportlogiq](http://sportlogiq.com/en/), which has not been published.
+
+If you want to run the network, please prepare your won sequential dataset, please organize the data according to network input in the format of Numpy.   
+
+***Package required:***  
 1. Numpy 
 2. Tensorflow
+
+we are still updating this repository.

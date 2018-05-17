@@ -13,7 +13,9 @@ Network Structure:
 | Fully Connected Layer 3| 3      |  N/A |
 
 The image structure is:
-![model-structure](./images/DP-lstm-model-structure.png =250x)
+<img src=./images/DP-lstm-model-structure.png alt="drawing" style="width: 200px;"/>
+
+<!---![model-structure](./images/DP-lstm-model-structure.png =250x250)--->
 
 ./images/DP-lstm-model-structure.png
 If you want to run it, please organize the data according to network input in array format of Numpy.  

@@ -13,6 +13,7 @@ for Context-Aware Player Evaluation](inprogress).
 | Fully Connected Layer 3| 3      |  N/A |
 
 ***Image of network structure***:  
+
 <img src=./images/DP-lstm-model-structure.png alt="drawing" height="320" width="420"/>
 
 <!---![model-structure](./images/DP-lstm-model-structure.png =250x250)--->
@@ -31,5 +32,7 @@ If you want to run the network, please prepare your won sequential dataset, plea
 ***Package required:***  
 1. Numpy 
 2. Tensorflow
+3. Scipy
+4. Matplotlib
 
 we are still updating this repository.

@@ -13,7 +13,7 @@ for Context-Aware Player Evaluation](inprogress).
 | Fully Connected Layer 3| 3      |  N/A |
 
 ***Image of network structure***:  
-<img src=./images/DP-lstm-model-structure.png alt="drawing" height="42" width="42"/>
+<img src=./images/DP-lstm-model-structure.png alt="drawing" height="420" width="420"/>
 
 <!---![model-structure](./images/DP-lstm-model-structure.png =250x250)--->
 

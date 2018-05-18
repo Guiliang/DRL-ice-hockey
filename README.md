@@ -1,7 +1,7 @@
 # DRL-ice-hockey
 
-The repository contains the codes about the network structure of [Deep Reinforcement Learning in Ice Hockey
-for Context-Aware Player Evaluation](inprogress).  
+The repository contains the codes about the network structure of Deep Reinforcement Learning in Ice Hockey
+for Context-Aware Player Evaluation.  
 
 ***Network Structure***:  
 

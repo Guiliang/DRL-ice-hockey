@@ -36,7 +36,7 @@ If you want to run the network, please prepare your won sequential dataset, plea
 3. Scipy
 4. Matplotlib
 
-***LICENSE***
+***LICENSE***  
 MIT LICENSE
 
 we are still updating this repository.

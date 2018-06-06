@@ -25,9 +25,10 @@ It's a Temporal Difference learning method, and estimate the player performance 
 ***Running:***  
 Use ```python td_three_prediction_lstm.py``` to run the neural network.  
 Use ```python player_ranking_match_by_match_td_lstm.py``` to compute the player ranking metric.  
-The origin works uses a private play-by-play dataset from [Sportlogiq](http://sportlogiq.com/en/), which has not been published.
+The origin works uses a private play-by-play dataset from [Sportlogiq](http://sportlogiq.com/en/).
 
-If you want to run the network, please prepare your won sequential dataset, please organize the data according to network input in the format of Numpy.   
+If you want to run the network, please prepare your won sequential dataset, please organize the data according to network input in the format of Numpy. 
+The neural network require three input: reward, state_input (conrtain both state features and one hot represetation of action) and state_trace_length, they must has the same length L (number of events in a game). We have trace length equals to 10, so reward is an L\*10 array, state_input is an L\*10\*feature_number array and state_trace_length is a one demensional vector tells the length of plays in a game.
 
 ***Package required:***  
 1. Numpy 

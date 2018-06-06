@@ -27,18 +27,17 @@ SPORT = "NHL"
 save_mother_dir = "/Local-Scratch"
 # if_correct_velocity = "_v_correct_"
 
-LOG_DIR = save_mother_dir + "/oschulte/Galen/models/hybrid_sl_log_NN/Scale-three-cut_together_log_train_feature" + str(
+LOG_DIR = "./models/hybrid_sl_log_NN/Scale-three-cut_together_log_train_feature" + str(
     FEATURE_TYPE) + "_batch" + str(
     BATCH_SIZE) + "_iterate" + str(
     ITERATE_NUM) + "_lr" + str(
     learning_rate) + "_" + str(MODEL_TYPE) + "_MaxTL" + str(MAX_TRACE_LENGTH)
-SAVED_NETWORK = save_mother_dir + "/oschulte/Galen/models/hybrid_sl_saved_NN/Scale-three-cut_together_saved_networks_feature" + str(
+SAVED_NETWORK = save_mother_dir + "./models/hybrid_sl_saved_NN/Scale-three-cut_together_saved_networks_feature" + str(
     FEATURE_TYPE) + "_batch" + str(
     BATCH_SIZE) + "_iterate" + str(
     ITERATE_NUM) + "_lr" + str(
     learning_rate) + "_" + str(MODEL_TYPE) + "_MaxTL" + str(MAX_TRACE_LENGTH)
-DATA_STORE = "/cs/oschulte/Galen/Hockey-data-entire/Hybrid-RNN-Hockey-Training-All-feature" + str(
-    FEATURE_TYPE) + "-scale-neg_reward" + "_length-dynamic"
+DATA_STORE = "your-data-dir"
 
 DIR_GAMES_ALL = os.listdir(DATA_STORE)
 number_of_total_game = len(DIR_GAMES_ALL)

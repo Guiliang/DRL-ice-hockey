@@ -28,7 +28,13 @@ Use ```python player_ranking_match_by_match_td_lstm.py``` to compute the player 
 The origin works uses a private play-by-play dataset from [Sportlogiq](http://sportlogiq.com/en/).
 
 ***About the input:***  
-If you want to run the network, please prepare your won sequential dataset, please organize the data according to network input in the format of Numpy. As it's shown in ```td_three_prediction_lstm.py```, the neural network require three input: reward, state_input (conrtain both state features and one hot represetation of action) and state_trace_length, they must has the same length L (number of events in a game). We have trace length equals to 10, so reward is an L\*10 array, state_input is an L\*10\*feature_number array and state_trace_length is an one demensional vector that tells the length of plays in a game.
+If you want to run the network, please prepare your won sequential dataset, please organize the data according to network input in the format of Numpy. As it's shown in ```td_three_prediction_lstm.py```, the neural network requires three input files: 
+
+* reward
+* state_input (conrtains both state features and one hot represetation of action) 
+* state_trace_length
+
+Each input file must has the same number of rows _R_ (corresponding to number of events in a game). In our paper, we have trace length equals to 10, so reward is an L\*10 array, state_input is an L\*10\*feature_number array and state_trace_length is an one demensional vector that tells the length of plays in a game.
 
 ***Package required:***
 1. Numpy 

@@ -1,0 +1,14 @@
+MODEL_TYPE = "v4"
+MAX_TRACE_LENGTH = 2
+FEATURE_NUMBER = 25
+BATCH_SIZE = 32
+GAMMA = 1
+H_SIZE = 512
+USE_HIDDEN_STATE = False
+model_train_continue = True
+SCALE = True
+FEATURE_TYPE = 5
+ITERATE_NUM = 30
+learning_rate = 1e-4
+SPORT = "NHL"
+save_mother_dir = "/Local-Scratch"

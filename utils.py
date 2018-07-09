@@ -1,4 +1,5 @@
 import numpy as np
+from configuration import FEATURE_NUMBER
 
 
 def handle_trace_length(state_trace_length):
@@ -16,9 +17,13 @@ def handle_trace_length(state_trace_length):
 
 def get_together_training_batch(s_t0, state_input, reward, train_number, train_len, state_trace_length, BATCH_SIZE):
     """
-    generate the training batch
-    reward  = [home, away, neither]
+    we generate the training batch, your can write your own method.
+    in our dataset, 1 means home score, -1 means away score, we transfer it to one-hot representation:
+    reward  = [If_home_score, If_away_score, If_NeitherTeam_score]
     :return:
+    batch_return is [s,s',r,s_play_length,s'_play_length, if_game_end, if_score_in_the_last_time_step]
+    train_number is the current where we stop training
+    s_t0 is the s for the next batch
     """
     batch_return = []
     current_batch_length = 0
@@ -92,7 +97,7 @@ def get_together_training_batch(s_t0, state_input, reward, train_number, train_l
             s_t0 = s_t1
             break
 
-        trace_length_index_t0 = s_length_t0 - 1  # we want the reward of s_t0, so -2
+        trace_length_index_t0 = s_length_t0 - 1
         r_t0 = np.asarray([s_reward_t0[trace_length_index_t0]])
         if r_t0 != [float(0)]:
             # print r_t0
@@ -142,7 +147,7 @@ def padding_hybrid_reward(hybrid_reward):
 
 def compromise_state_trace_length(state_trace_length, state_input, reward, MAX_TRACE_LENGTH):
     """
-    padding the features and rewards
+    padding the features and rewards with 0, in order to get a proper format for LSTM
     :param state_trace_length: list of trace length
     :param state_input: list of state
     :param reward: list of rewards

@@ -3,7 +3,7 @@
 The repository contains the codes about the network structure of paper "[Deep Reinforcement Learning in Ice Hockey
 for Context-Aware Player Evaluation](https://arxiv.org/abs/1805.11088)".  
 
-##Network Structure:  
+## Network Structure:  
 
 | name        | nodes           | activation function  |
 | ------------- |:-------------:| -----:|
@@ -12,21 +12,21 @@ for Context-Aware Player Evaluation](https://arxiv.org/abs/1805.11088)".
 | Fully Connected Layer 2| 1000      |  Relu |
 | Fully Connected Layer 3| 3      |  N/A |
 
-##Image of network structure:  
+## Image of network structure:  
 
 <img src=./images/DP-lstm-model-structure.png alt="drawing" height="320" width="420"/>
 
 <!---![model-structure](./images/DP-lstm-model-structure.png =250x250)--->
 
-##Training method 
+## Training method 
 We are using the on-policy prediction method [Sarsa](https://en.wikipedia.org/wiki/State%E2%80%93action%E2%80%93reward%E2%80%93state%E2%80%93action) (State–Action–Reward–State–Action).
 It's a Temporal Difference learning method, and estimate the player performance by Q(s,a), where state s is a series of game contexts and action a is the motion of player.
 
-##Running:  
+## Running:  
 Use ```python td_three_prediction_lstm.py``` to train the neural network, which produce the Q values. Goal-Impact-Metric is the different between consecutive Q values.  
 The origin works uses a private play-by-play dataset from [Sportlogiq](http://sportlogiq.com/en/), which is not allowed to publish. 
 
-###About the input: 
+### About the input: 
 If you want to run the network, please prepare your won sequential dataset, please organize the data according to network input in the format of Numpy. As it's shown in ```td_three_prediction_lstm.py```, the neural network requires three input files: 
 
 * reward
@@ -37,14 +37,14 @@ Each input file must has the same number of rows _R_ (corresponding to number of
 
 The data must be ***standardized or normalized*** before inputing to the neural network, we rae using the ***sklearn.preprocessing.scale*** 
 
-##Package required:
+## Package required:
 1. Numpy 
 2. Tensorflow
 3. Scipy
 4. Matplotlib
 5. scikit-learn
 
-##LICENSE:
+## LICENSE:
 MIT LICENSE
 
 we are still updating this repository.

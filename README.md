@@ -1,7 +1,7 @@
 # DRL-ice-hockey
 
 The repository contains the codes about the network structure of paper "[Deep Reinforcement Learning in Ice Hockey
-for Context-Aware Player Evaluation](https://arxiv.org/abs/1805.11088)".  
+for Context-Aware Player Evaluation](https://www.ijcai.org/proceedings/2018/0478.pdf)".  
 
 ## Network Structure:  
 

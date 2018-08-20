@@ -33,9 +33,18 @@ If you want to run the network, please prepare your won sequential dataset, plea
 * state_input (conrtains both state features and one hot represetation of action) 
 * state_trace_length
 
-Each input file must has the same number of rows _R_ (corresponding to number of events in a game). In our paper, we have trace length equals to 10, so reward is an R\*10 array, state_input is an R\*10\*feature_number array and state_trace_length is an one demensional vector that tells the length of plays in a game.
+Each input file must has the same number of rows _R_ (corresponding to number of events in a game). In our paper, we have trace length equals to 10, so reward is an _R_\*10 array, state_input is an _R_\*10\*feature_number array and state_trace_length is an one demensional vector that tells the length of plays in a game.
 
-The data must be ***standardized or normalized*** before inputing to the neural network, we rae using the ***sklearn.preprocessing.scale*** 
+To be specific, if you want to directly run this python RNN scripy, you need to prepare the input in this way. In each game file, there are three .mat files representing reward, state_input and state_trace_length.
+ 
+ - **GameDirectory_xxx**
+   - *dynamic_rnn_reward_xxx.mat*
+   - *dynamic_rnn_input_xxx.mat*
+   - *hybrid_trace_length_xxx.mat*
+ 
+ in which *xxx* is a random string.
+
+The data must be ***standardized or normalized*** before inputing to the neural network, we are using the ***sklearn.preprocessing.scale*** 
 
 ## Package required:
 1. Numpy 

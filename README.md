@@ -33,9 +33,43 @@ If you want to run the network, please prepare your won sequential dataset, plea
 * state_input (conrtains both state features and one hot represetation of action) 
 * state_trace_length
 
-Each input file must has the same number of rows _R_ (corresponding to number of events in a game). In our paper, we have trace length equals to 10, so reward is an R\*10 array, state_input is an R\*10\*feature_number array and state_trace_length is an one demensional vector that tells the length of plays in a game.
+To be specific, if you want to directly run this python RNN scripy, you need to prepare the input in this way. In each game file, there are three .mat files representing reward, state_input and state_trace_length. The name of files should follow the rules below:
+ 
+ - **GameDirectory_xxx**
+   - *dynamic_rnn_reward_xxx.mat*
+     - A two dimensional array named 'dynamic_rnn_reward' should be in the .mat file
+     - Row of the array: _R_, Column of the array: 10
+   - *dynamic_rnn_input_xxx.mat*
+     - A three dimensional array named 'dynamic_feature_input' should be in the .mat file
+     - First dimension: _R_, Second dimension: 10, Third dimension: _feature number_
+   - *hybrid_trace_length_xxx.mat*
+     - A two dimensional array named 'hybrid_trace_length' should be in the .mat file
+     - Row of the array: 1, Column of the array: Unknown
+     - The array gives us information about how to split the length of different plays, so the sum(_array_element_) should be _R_
+ 
+ in which *xxx* is a random string.
+ 
+Each input file must has the same number of rows _R_ (corresponding to number of events in a game). In our paper, we have trace length equals to 10, so reward is an _R_\*10 array, state_input is an _R_\*10\*_feature_number_ array and state_trace_length is an one demensional vector that tells the length of plays in a game.
 
-The data must be ***standardized or normalized*** before inputing to the neural network, we rae using the ***sklearn.preprocessing.scale*** 
+#### Examples
+```
+# R=3, feature number=1
+>>> reward['dynamic_rnn_reward']
+array([[0, 0, 0, 1, 0, 0, 1, 0, 0, 0],
+       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+       [0, 0, 0, 0, 1, 0, 0, 0, 0, 0]])
+>>> state_input['dynamic_feature_input']
+array([[[-4.51194112e-02],[ 0.00000000e+00],[ 0.00000000e+00],[ 0.00000000e+00],[ 0.00000000e+00],
+        [ 0.00000000e+00],[ 0.00000000e+00],[ 0.00000000e+00],[ 0.00000000e+00],[ 0.00000000e+00]],
+       [[-4.51194112e-02],[ 5.43495586e-04],[ 0.00000000e+00],[ 0.00000000e+00],[ 0.00000000e+00],
+        [ 0.00000000e+00],[ 0.00000000e+00],[ 0.00000000e+00],[ 0.00000000e+00],[ 0.00000000e+00]],
+       [[-4.51194112e-02],[ 5.43495586e-04],[-3.46831161e-01],[ 0.00000000e+00],[ 0.00000000e+00],
+        [ 0.00000000e+00],[ 0.00000000e+00],[ 0.00000000e+00],[ 0.00000000e+00],[ 0.00000000e+00]]])
+>>> trace_length['hybrid_trace_length']
+array([[1, 2]])
+```
+
+The data must be ***standardized or normalized*** before inputing to the neural network, we are using the ***sklearn.preprocessing.scale*** 
 
 ## Package required:
 1. Numpy 

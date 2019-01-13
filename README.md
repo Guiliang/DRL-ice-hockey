@@ -72,11 +72,21 @@ array([[1, 2]])
 The data must be ***standardized or normalized*** before inputing to the neural network, we are using the ***sklearn.preprocessing.scale*** 
 
 ## Package required:
-1. Numpy 
-2. Tensorflow
+Python 2.7
+1. Numpy
+2. Tensorflow (1.0.0?)
 3. Scipy
 4. Matplotlib
 5. scikit-learn
+(We may need a requirement.txt)
+
+## Command:
+Train:
+```
+```
+Evaluate:
+```
+```
 
 ## LICENSE:
 MIT LICENSE

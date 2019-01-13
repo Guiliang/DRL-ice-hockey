@@ -81,12 +81,27 @@ Python 2.7
 (We may need a requirement.txt)
 
 ## Command:
-Train:
+(For Oliver's students with access to the net drive, the following steps should work on lab's machine)
+
+Training:
+1. modify the `save_mother_dir` in `configuration.py` as your save directory, e.g. `/cs/oschulte/Bill/` or just `/local_scratch/`
+2. `cd` into your `save_mother_dir`,  make two directories `./models/hybrid_sl_saved_NN/` and `./models/hybrid_sl_log_NN/`
+3. modify the global `DATA_STORE` variable in `td_three_prediction_lstm.py` as `/cs/oschulte/Galen/Hockey-data-entire/State-Hockey-Training-All-feature5-scale-neg_reward_v_correct_/`
+4. check the package and python version as mentioned above
+5. `python td_three_prediction_lstm.py`
+
+Evaluation:
+1. suppose you have finish the step 1-5 in the training process, to evalute the network only, just disable the AdamOptimizer. Modify line 188-192 in `td_three_prediction_lstm.py` as below
 ```
+[diff, read_out, cost_out, summary_train] = sess.run(
+                    [model.diff, model.read_out, model.cost, merge],
+                    feed_dict={model.y: y_batch,
+                               model.trace_lengths: trace_t0_batch,
+                               model.rnn_input: s_t0_batch})
 ```
-Evaluate:
-```
-```
+2. `python td_three_prediction_lstm.py`
+3. we have a pretrained network in `/cs/oschulte/Bill/hybrid_sl_saved_NN/Scale-three-cut_together_saved_networks_feature5_batch32_iterate30_lr0.0001_v4_v_correct__MaxTL2/` only for LSTM_V4. If you want to directly use this network to evaluate, finish the step 1-4 in the training process, and modify the global `SAVED_NETWORK` variable in `td_three_prediction_lstm.py` as the previous network directory, then you can run the code using step 2.
+
 
 ## LICENSE:
 MIT LICENSE

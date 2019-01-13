@@ -9,12 +9,12 @@ from utils import handle_trace_length, get_together_training_batch, compromise_s
 from configuration import MODEL_TYPE, MAX_TRACE_LENGTH, FEATURE_NUMBER, BATCH_SIZE, GAMMA, H_SIZE, \
     model_train_continue, FEATURE_TYPE, ITERATE_NUM, learning_rate, SPORT, save_mother_dir
 
-LOG_DIR = "./models/hybrid_sl_log_NN/Scale-three-cut_together_log_train_feature" + str(
+LOG_DIR = save_mother_dir + "/models/hybrid_sl_log_NN/Scale-three-cut_together_log_train_feature" + str(
     FEATURE_TYPE) + "_batch" + str(
     BATCH_SIZE) + "_iterate" + str(
     ITERATE_NUM) + "_lr" + str(
     learning_rate) + "_" + str(MODEL_TYPE) + "_MaxTL" + str(MAX_TRACE_LENGTH)
-SAVED_NETWORK = save_mother_dir + "./models/hybrid_sl_saved_NN/Scale-three-cut_together_saved_networks_feature" + str(
+SAVED_NETWORK = save_mother_dir + "/models/hybrid_sl_saved_NN/Scale-three-cut_together_saved_networks_feature" + str(
     FEATURE_TYPE) + "_batch" + str(
     BATCH_SIZE) + "_iterate" + str(
     ITERATE_NUM) + "_lr" + str(

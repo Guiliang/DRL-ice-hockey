@@ -86,7 +86,7 @@ Python 2.7
 Training:
 1. modify the `save_mother_dir` in `configuration.py` as your save directory, e.g. `/cs/oschulte/Bill/` or just `/local_scratch/`
 2. `cd` into your `save_mother_dir`,  make two directories `./models/hybrid_sl_saved_NN/` and `./models/hybrid_sl_log_NN/`
-3. modify the global `DATA_STORE` variable in `td_three_prediction_lstm.py` as `/cs/oschulte/Galen/Hockey-data-entire/State-Hockey-Training-All-feature5-scale-neg_reward_v_correct_/`
+3. modify the global `DATA_STORE` variable in `td_three_prediction_lstm.py` as `/cs/oschulte/Galen/Hockey-data-entire/Hybrid-RNN-Hockey-Training-All-feature5-scale-neg_reward_v_correct__length-dynamic/`
 4. check the package and python version as mentioned above
 5. `python td_three_prediction_lstm.py`
 

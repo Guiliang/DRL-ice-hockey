@@ -24,7 +24,7 @@ It's a Temporal Difference learning method, and estimate the player performance 
 
 ## Running:  
 Use ```python td_three_prediction_lstm.py``` to train the neural network, which produce the Q values. Goal-Impact-Metric is the different between consecutive Q values.  
-The origin works uses a private play-by-play dataset from [Sportlogiq](http://sportlogiq.com/en/), which is not allowed to publish. 
+The origin works uses a private play-by-play dataset from [Sportlogiq](http://sportlogiq.com/en/), which we are not allowed to publish. 
 
 ### About the input: 
 If you want to run the network, please prepare your won sequential dataset, please organize the data according to network input in the format of Numpy. As it's shown in ```td_three_prediction_lstm.py```, the neural network requires three input files: 

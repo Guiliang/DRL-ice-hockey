@@ -1,5 +1,6 @@
 import tensorflow as tf
 
+
 class td_prediction_lstm_V3:
     def __init__(self, FEATURE_NUMBER, H_SIZE, MAX_TRACE_LENGTH, learning_rate, rnn_type='bp_last_step'):
         """
